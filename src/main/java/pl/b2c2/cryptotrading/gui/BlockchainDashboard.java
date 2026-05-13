@@ -5,7 +5,6 @@ import pl.b2c2.cryptotrading.config.BlockchainConfig;
 import pl.b2c2.cryptotrading.domain.BlockData;
 import pl.b2c2.cryptotrading.reporting.CsvReporter;
 
-import java.time.Instant;
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
@@ -97,13 +96,6 @@ public class BlockchainDashboard extends JFrame {
                     outputArea.append(
                             "Miner: "
                                     + block.getMiner()
-                                    + "\n"
-                    );
-
-                    Instant instant = Instant.ofEpochSecond(block.getTimestamp().longValue());
-                    outputArea.append(
-                            "Timestamp: "
-                                    + instant
                                     + "\n\n"
                     );
                 });

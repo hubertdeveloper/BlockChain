@@ -14,27 +14,29 @@ public class BlockchainStatisticsServiceTest {
     void shouldCalculateTotalTransactions() {
 
         List<BlockData> blocks = List.of(
-
                 new BlockData(
                         BigInteger.ONE,
                         "0x1",
-                        10
+                        10,
+                        BigInteger.valueOf(1000),
+                        BigInteger.valueOf(2000),
+                        "miner1",
+                        BigInteger.valueOf(111)
                 ),
-
                 new BlockData(
                         BigInteger.TWO,
                         "0x2",
-                        20
+                        20,
+                        BigInteger.valueOf(2000),
+                        BigInteger.valueOf(3000),
+                        "miner2",
+                        BigInteger.valueOf(222)
                 )
         );
 
-        BlockchainStatisticsService service =
-                new BlockchainStatisticsService();
+        BlockchainStatisticsService service = new BlockchainStatisticsService();
 
-        int result =
-                service.calculateTotalTransactions(
-                        blocks
-                );
+        int result = service.calculateTotalTransactions(blocks);
 
         assertEquals(30, result);
     }
@@ -43,27 +45,29 @@ public class BlockchainStatisticsServiceTest {
     void shouldCalculateAverageTransactions() {
 
         List<BlockData> blocks = List.of(
-
                 new BlockData(
                         BigInteger.ONE,
                         "0x1",
-                        10
+                        10,
+                        BigInteger.valueOf(1000),
+                        BigInteger.valueOf(2000),
+                        "miner1",
+                        BigInteger.valueOf(111)
                 ),
-
                 new BlockData(
                         BigInteger.TWO,
                         "0x2",
-                        20
+                        20,
+                        BigInteger.valueOf(2000),
+                        BigInteger.valueOf(3000),
+                        "miner2",
+                        BigInteger.valueOf(222)
                 )
         );
 
-        BlockchainStatisticsService service =
-                new BlockchainStatisticsService();
+        BlockchainStatisticsService service = new BlockchainStatisticsService();
 
-        double average =
-                service.calculateAverageTransactions(
-                        blocks
-                );
+        double average = service.calculateAverageTransactions(blocks);
 
         assertEquals(15.0, average);
     }
@@ -71,13 +75,9 @@ public class BlockchainStatisticsServiceTest {
     @Test
     void shouldReturnZeroForEmptyList() {
 
-        BlockchainStatisticsService service =
-                new BlockchainStatisticsService();
+        BlockchainStatisticsService service = new BlockchainStatisticsService();
 
-        double average =
-                service.calculateAverageTransactions(
-                        List.of()
-                );
+        double average = service.calculateAverageTransactions(List.of());
 
         assertEquals(0.0, average);
     }
