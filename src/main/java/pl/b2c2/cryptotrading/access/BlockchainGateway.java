@@ -14,7 +14,13 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-
+/*
+   Klasa odpowiedzialna za:
+   - połączenie z blockchainem
+   - pobieranie bloków,
+   - mapowanie danych blockchaina
+     do modelu BlockData.
+ */
 public class BlockchainGateway {
 
     private final Web3j web3j;

@@ -17,7 +17,9 @@ public class BlockData {
     private final String miner;
 
     private final BigInteger timestamp;
-
+    /*
+        Konstruktor tworzący object.
+      */
     public BlockData(
             BigInteger number,
             String hash,
@@ -36,7 +38,7 @@ public class BlockData {
         this.miner = miner;
         this.timestamp = timestamp;
     }
-
+//Gettery
     public BigInteger getNumber() {
         return number;
     }
