@@ -16,10 +16,12 @@ public class BlockchainDashboard extends JFrame {
     public BlockchainDashboard() {
 
         setTitle("Blockchain Monitor");
+        //rozmiar okna
         setSize(700, 500);
+        //przy kliknięciu X program ma zakońaczyć działanie
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-
+        //przycisk ładowania danych
         JButton loadButton =
                 new JButton("Load Blockchain Data");
 
@@ -37,7 +39,7 @@ public class BlockchainDashboard extends JFrame {
         add(loadButton, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
     }
-
+//wczytuje dane
     private void loadData() {
 
         SwingUtilities.invokeLater(() ->
@@ -60,7 +62,7 @@ public class BlockchainDashboard extends JFrame {
             reporter.saveBlocksToCsv(blocks);
 
             for (BlockData block : blocks) {
-
+//formatowanie wyświetlania + wyświetlanie
                 SwingUtilities.invokeLater(() -> {
 
                     outputArea.append(
@@ -100,7 +102,7 @@ public class BlockchainDashboard extends JFrame {
                     );
                 });
             }
-
+//łapanie ewentualnych błędów
         } catch (Exception e) {
 
             SwingUtilities.invokeLater(() ->
@@ -111,7 +113,7 @@ public class BlockchainDashboard extends JFrame {
             );
         }
     }
-
+//MAIN wywołanie programu
     public static void main(String[] args) {
 
         SwingUtilities.invokeLater(() -> {
