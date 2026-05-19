@@ -17,7 +17,7 @@ public class CsvReporter {
     public void saveBlocksToCsv(
             List<BlockData> blocks
     ) {
-
+//tworzenie nowego pliku, jeśli istnieje dopisanie do istniejącego
         try {
 
             File file =
@@ -52,7 +52,7 @@ public class CsvReporter {
 
                 writer.writeNext(header);
             }
-
+//pętla dla każdego bloku
             for (BlockData block : blocks) {
 
                 String[] data = {
@@ -82,11 +82,11 @@ public class CsvReporter {
             }
 
             writer.close();
-
+//komunikat o wykonaniu akcjii- zapisywanie
             System.out.println(
                     "CSV report saved"
             );
-
+//łapanie błędu- zapisu
         } catch (IOException e) {
 
             System.out.println(

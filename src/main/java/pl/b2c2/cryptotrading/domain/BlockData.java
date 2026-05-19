@@ -18,7 +18,7 @@ public class BlockData {
 
     private final BigInteger timestamp;
     /*
-        Konstruktor tworzący object.
+        Konstruktor tworzący object
       */
     public BlockData(
             BigInteger number,

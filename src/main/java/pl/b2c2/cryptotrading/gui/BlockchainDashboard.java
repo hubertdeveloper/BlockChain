@@ -14,7 +14,7 @@ public class BlockchainDashboard extends JFrame {
     private final JTextArea outputArea;
 
     public BlockchainDashboard() {
-
+//ustawienie tytułu okna
         setTitle("Blockchain Monitor");
         //rozmiar okna
         setSize(700, 500);
